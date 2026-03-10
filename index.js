@@ -22,11 +22,7 @@ searchUserForm.addEventListener("submit", async (event) => {
 
 
 async function getUserData(username){
-    const response = await fetch(`https://api.github.com/users/${username}`, {
-        headers: {
-            Authorization: `token ${process.env.GITHUB_TOKEN}`
-        }
-    });
+    const response = await fetch(`https://api.github.com/users/${username}`);
     
     if(response.ok){
         const data = await response.json();
@@ -38,22 +34,14 @@ async function getUserData(username){
 }
 
 async function getUserRepos(username){
-    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=4`, {
-        headers: {
-            Authorization: `token ${process.env.GITHUB_TOKEN}`
-        }
-    });
+    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=4`);
     
     const data = await response.json()
     return data;
 }
 
 async function getRepoLanguages(repo){
-    const response = await fetch(`https://api.github.com/repos/${repo}/languages`, {
-        headers: {
-            Authorization: `token ${process.env.GITHUB_TOKEN}`
-        }
-    });
+    const response = await fetch(`https://api.github.com/repos/${repo}/languages`);
 
     const data = await response.json()
     return data;
