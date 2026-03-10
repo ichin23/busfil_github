@@ -1,0 +1,230 @@
+:root {
+  --gray-100: #f0f6fc;
+  --gray-200: #c9d1d9;
+  --gray-400: #8b949e;
+  --gray-500: #f0f6fc1a;
+
+  --black-400: #30363d;
+  --black-500: #21262d;
+  --black-600: #161b22;
+  --black-700: #0d1117;
+  --black-800: #010409;
+
+  --green-300: #2ea043;
+  --green-400: #238636;
+
+  --white: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+    background-color: var(--black-800);
+}
+
+body, button, input{
+    color: var(--gray-200);
+}
+
+button{
+    cursor: pointer;
+}
+
+li{
+    list-style-type: none;
+}
+
+.header-container{
+    background-color: var(--black-600);
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.main-title{
+    color: var(--gray-100);
+}
+
+.header-content img{
+    width: 40px;
+    height: auto;
+}
+
+main{
+    max-width: 1180px;
+    margin: 0 auto 80px;
+    padding: 0 16px;
+
+}
+
+.search-for-user-form{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    height: 48px;
+}
+
+.username-input{
+    width: 240px;
+    padding: 12px;
+    background-color: var(--black-600);
+    border: 1px solid var(--black-400);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+button[type="submit"]{
+    padding: 16px;
+    background-color: var(--green-400);
+    border: 1px solid var(--green-400);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: var(--white);
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+button[type="submit"]:hover{
+    background-color: var(--green-300);
+    border-color: var(--green-300);
+}
+
+.user-data-container{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+}
+
+.user-data-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.user-avatar{
+    width: 140px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid var(--gray-200);
+}
+
+.user-data{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.user-info{
+    font-size: 18px;
+}
+
+.user-repo-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:32px;
+}
+
+.user-repo-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.user-repo{
+    background-color: var(--black-700);
+    padding: 16px;
+    border: 1px solid var(--black-400);
+    border-radius: 6px;
+}
+
+.user-repo header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repo-title{
+    font-size:20px;
+}
+
+.repo-link{
+    background-color: var(--black-500);
+    color: var(--gray-200);
+    border: 1px solid var(--gray-500);
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: 0.2s;
+}
+
+.repo-link:hover{
+    background-color: var(--black-400);
+    border-color: var(--black-300);
+}
+
+.repo-description{
+    margin: 16px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 530px  ;
+}
+
+.hide{
+    display: none;
+}
+
+.user-repo-container.no-repo{
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px){
+    *{
+        font-size: 22px;
+    }
+    .user-avatar{
+        width: 40%;
+    }
+    .user-repo-container{
+        grid-template-columns: 1fr;
+    }
+
+    .user-data-content{
+        flex-direction: column;
+    }
+
+    .user-data{
+        text-align: center;
+    }
+
+    .user-info{
+        font-size: 22px;
+    }
+
+    .search-for-user-form>button{
+        font-size: 18px;
+    }
+    
+    .username-input{
+        width: 100%;
+        font-size: 20px;
+    }
+}
